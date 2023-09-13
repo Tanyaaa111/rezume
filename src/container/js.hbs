@@ -1,0 +1,121 @@
+<div>
+    <h1>{{name}}</h1>
+</div>
+<hr>
+<br>
+<div>
+    <q>
+        {{description}}
+    </q>
+</div>
+<div>
+    {{#with history}}
+    <div>
+        {{year}}
+    </div>
+    <div>
+        {{founder}}
+    </div>
+    {{/with}}
+</div>
+<hr>
+<br>
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Types
+    </button>
+    <ul class="dropdown-menu">
+        {{#each types}}
+        <li><a class="dropdown-item" href="#">{{this}}</a></li>
+        {{/each}}
+    </ul>
+</div>
+<hr>
+<br>
+<div>
+    <h2>Syntax</h2>
+</div>
+{{#with syntax}}
+<ul>
+    <div><b>Variables:</b></div>
+    {{#each variables}}
+    <li>{{this}}</li>
+    {{/each}}
+</ul>
+<ul>
+    <div><b>Functions:</b></div>
+    {{#each functions}}
+    <li>{{this}}</li>
+    {{/each}}
+</ul>
+<ul>
+    <div><b>Conditionals:</b></div>
+    {{#each conditionals}}
+    <li>{{this}}</li>
+    {{/each}}
+</ul>
+<ul>
+    <div><b>Loops:</b></div>
+    {{#each loops}}
+    <li>{{this}}</li>
+    {{/each}}
+</ul>
+<ul>
+    <div><b>Classes:</b></div>
+    {{#each classes}}
+    <li>{{this}}</li>
+    {{/each}}
+</ul>
+{{/with}}
+<hr>
+<br>
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Features
+    </button>
+    <ul class="dropdown-menu">
+        {{#each features}}
+        <li><a class="dropdown-item" href="#">{{this}}</a></li>
+        {{/each}}
+    </ul>
+</div>
+<br>
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Libraries
+    </button>
+    <ul class="dropdown-menu">
+        {{#each libraries}}
+        <li><a class="dropdown-item" href="#">{{this}}</a></li>
+        {{/each}}
+    </ul>
+</div>
+<br>
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Tools
+    </button>
+    <ul class="dropdown-menu">
+        {{#each tools}}
+        <li><a class="dropdown-item" href="#">{{this}}</a></li>
+        {{/each}}
+    </ul>
+</div>
+<hr>
+<br>
+<div>
+    <h2>Community</h2>
+</div>
+<ul>
+    {{#each community}}
+    <li>
+        <div>
+            <em>Name: </em> {{name}}
+        </div>
+        <div>
+            <em>Type: </em> {{type}}
+        </div>
+    </li>
+    <br>
+    {{/each}}
+</ul>
