@@ -1,0 +1,195 @@
+<div>
+    <h1>{{name}}</h1>
+</div>
+<hr>
+<div>
+    <q>{{description}}</q>
+</div>
+<br>
+<div>
+    <h2>
+        Price: {{price}}
+    </h2>
+</div>
+<div>
+    <b>
+        {{category}}
+    </b>
+</div>
+<br>
+<hr>
+<br>
+<div>
+    <h3>
+        Features
+    </h3>
+</div>
+<br>
+<div>
+    {{#with features}}
+    <div>
+        <div>
+            <b>Processor</b>
+        </div>
+        <div>
+            {{#with processor}}
+            <ul class="list-group">
+                <li class="list-group-item">Brand: {{brand}}</li>
+                <li class="list-group-item">Model: {{model}}</li>
+                <li class="list-group-item">Speed: {{speed}}</li>
+                <li class="list-group-item">Cores: {{cores}}</li>
+                <li class="list-group-item">Cache: {{cache}}</li>
+            </ul>
+            {{/with}}
+        </div>
+    </div>
+    <br>
+    <div>
+        <div>
+            <b>Memory</b>
+        </div>
+        <div>
+            {{#with memory}}
+            <ul class="list-group">
+                <li class="list-group-item">Type: {{type}}</li>
+                <li class="list-group-item">Size: {{size}}</li>
+                <li class="list-group-item">Speed: {{speed}}</li>
+            </ul>
+            {{/with}}
+        </div>
+    </div>
+    <br>
+    <div>
+        <div>
+            <b>Storage</b>
+        </div>
+        <div>
+            {{#with storage}}
+            <ul class="list-group">
+                <li class="list-group-item">Type: {{type}}</li>
+                <li class="list-group-item">Size: {{size}}</li>
+            </ul>
+            {{/with}}
+        </div>
+    </div>
+    <br>
+    <div>
+        <div>
+            <b>Display</b>
+        </div>
+        <div>
+            {{#with display}}
+            <ul class="list-group">
+                <li class="list-group-item">Size: {{size}}</li>
+                <li class="list-group-item">Resolution: {{resolution}}</li>
+                <li class="list-group-item">Technology: {{technology}}</li>
+                <li class="list-group-item">Color space: {{color_space}}</li>
+                <li class="list-group-item">Brightness: {{brightness}}</li>
+                <li class="list-group-item">Refresh rate: {{refresh_rate}}</li>
+            </ul>
+            {{/with}}
+        </div>
+    </div>
+    <br>
+    <div>
+        <div>
+            <b>Graphics</b>
+        </div>
+        <div>
+            {{#with graphics}}
+            <ul class="list-group">
+                <li class="list-group-item">Brand: {{brand}}</li>
+                <li class="list-group-item">Model: {{model}}</li>
+                <li class="list-group-item">Memory: {{memory}}</li>
+            </ul>
+            {{/with}}
+        </div>
+    </div>
+    <br>
+    <div>
+        <div>
+            <b>Ports</b>
+        </div>
+        <div>
+            {{#each ports}}
+            <ul class="list-group">
+                <li class="list-group-item">Type: {{type}}</li>
+                <li class="list-group-item">Count: {{count}}</li>
+                {{#if features}}
+                <li class="list-group-item">
+                    <div class="dropdown">Features:
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Features
+                        </button>
+                        <ul class="dropdown-menu">
+                            {{#each features}}
+                            <li><a class="dropdown-item" href="#">{{this}}</a></li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </li>
+                <br>
+                {{/if}}
+            </ul>
+            {{/each}}
+        </div>
+    </div>
+    <br>
+    <div>
+        <div>
+            <b>Battery</b>
+        </div>
+        <div>
+            {{#with battery}}
+            <ul class="list-group">
+                <li class="list-group-item">Type: {{type}}</li>
+                <li class="list-group-item">Capacity: {{capacity}}</li>
+                <li class="list-group-item">Life: {{life}}</li>
+            </ul>
+            {{/with}}
+        </div>
+    </div>
+    <br>
+    <div>
+        <ul class="list-group">
+            <li class="list-group-item"><b>Weight:</b> {{weight}}</li>
+        </ul>
+    </div>
+    <br>
+    <div>
+        <div>
+            <b>Dimensions</b>
+        </div>
+        <div>
+            {{#with dimensions}}
+            <ul class="list-group">
+                <li class="list-group-item">Height: {{height}}</li>
+                <li class="list-group-item">Width: {{width}}</li>
+                <li class="list-group-item">Depth: {{depth}}</li>
+            </ul>
+            {{/with}}
+        </div>
+    </div>
+    <br>
+    <div>
+        <ul class="list-group">
+            <li class="list-group-item"><b>Operating system:</b> {{operating_system}}</li>
+        </ul>
+    </div>
+    <br>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Accessories
+        </button>
+        <ul class="dropdown-menu">
+            {{#each accessories}}
+            <li><a class="dropdown-item" href="#">Name: {{name}}</a></li>
+            <li><a class="dropdown-item" href="#">Price: {{price}}</a></li>
+            {{/each}}
+        </ul>
+    </div>
+    {{/with}}
+</div>
+<br>
+<br>
