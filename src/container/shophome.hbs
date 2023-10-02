@@ -1,0 +1,131 @@
+<main>
+    <div class="card m-4">
+        <div class="nav">
+            {{#with navigation}}
+            {{#each links}}
+            <div class="nav-item">
+                <a href="https://github.com/" class="nav-link">
+                    {{text}}
+                </a>
+            </div>
+            {{/each}}
+            {{/with}}
+        </div>
+    </div>
+
+    <div class="row g-3">
+        {{#with newsBlock}}
+        <h2 class="text-center">
+            {{title}}
+        </h2>
+        {{#each cards}}
+        <div class="col-3">
+            <div class="card text-bg-dark">
+                <div class="card-header">
+                    {{title}}
+                    {{#if isNew}}
+                    <span class="badge text-bg-success round-pill text-uppercase">New</span>
+                    {{/if}}
+                    {{#if isTop}}
+                    <span class="badge text-bg-danger round-pill text-uppercase">Top</span>
+                    {{/if}}
+                </div>
+                <div class="card-body">
+                    {{description}}
+                </div>
+            </div>
+        </div>
+        {{/each}}
+        {{/with}}
+    </div>
+    <hr class="mt-5 mb-3">
+    <div class="row g-4">
+        <div class="col-12">
+            <div class="nav nav-tabs">
+                {{#with goodsBlock}}
+                {{#each tabs}}
+                <div class="nav-item mb-4">
+                    <a href="#" class="nav-link {{#if isActive}} active{{/if}} {{#if isDisabled}}disabled{{/if}}">
+                        {{text}}
+                    </a>
+                </div>
+                {{/each}}
+                <div class="row g-3">
+                    {{#each cards}}
+                    <div class="col-4">
+                        <div class="card">
+                            <img class="card-img-top" src="https://picsum.photos/400/200">
+                            <div class="card-body">
+                                <h6 class="card-title">{{title}}
+                                    {{#if isHot}}
+                                    <spam class="badge text-bg-warning rounded-pill text-uppercase">Hot!</spam>
+                                    {{/if}}
+                                    {{#if isNew}}
+                                    <span class="badge text-bg-info rounded-pill">New</span>
+                                    {{/if}}
+                                </h6>
+                                <p>{{description}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+                {{/with}}
+            </div>
+        </div>
+    </div>
+    <hr class="mt-5 mb-5">
+    <div class="row">
+        {{#with subscribe}}
+        <div class="col-12">
+            <div class="card text-bg-dark">
+                <div class="card-header mb-3">
+                    <h2>{{header}}</h2>
+                </div>
+                <p class="ps-3">
+                    {{description}}
+                </p>
+                <div>
+                    {{#each buttons}}
+                    <div class="mb-3 ms-3">
+                        <a href="https://www.youtube.com/" class="btn btn-primary">{{text}}</a>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+        {{/with}}
+    </div>
+    <hr class="mt-5 mb-5">
+    <div class="row">
+        {{#with service}}
+        <div class="col-12">
+            <div class="card text-bg-success text-center">
+                <div class="card-body">
+                    <h2 class="mb-3">{{title}}</h2>
+                    <p class="mb-3">{{description}}</p>
+                    <div>
+                        {{#each buttons}}
+                        <a href="https://www.youtube.com/" class="btn btn-primary">{{text}}</a>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/with}}
+    </div>
+    <hr class="mt-5 mb-3">
+    <div class="nav">
+        {{#each footer}}
+        <div class="nav-item">
+            {{#each this}}
+            <a href="https://www.youtube.com/" class="nav-link m-2 {{#if isDisabled}} disabled {{/if}}">
+                <div>
+                    {{text}}
+                </div>
+            </a>
+            {{/each}}
+        </div>
+        {{/each}}
+    </div>
+</main>
