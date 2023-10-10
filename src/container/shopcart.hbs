@@ -1,0 +1,95 @@
+<main>
+    <div class="row">
+        <div class="col-12">
+            <div class="card mb-5">
+                <div class="nav">
+                    {{#with navigation}}
+                    {{#each links}}
+                    <div class="nav-item">
+                        <a href="https://github.com/" class="nav-link {{#if @last}}disabled{{/if}}">
+                            {{text}}
+                        </a>
+                    </div>
+                    {{/each}}
+                    {{/with}}
+                </div>
+            </div>
+            <div>
+                {{#with header}}
+                <h1 class="mt-3">{{title}}</h1>
+                {{#with button}}
+                <div class="mt-3">
+                    <a href="https://www.youtube.com/" class="btn btn-outline-secondary">{{text}}</a>
+                </div>
+                {{/with}}
+                {{/with}}
+            </div>
+        </div>
+    </div>
+    <hr class="my-5">
+    <div>
+        {{> cartGoodsItem}}
+    </div>
+    <hr class="my-5">
+    <div>
+        {{#with total}}
+        <div class="display-6 mb-3">{{title}}</div>
+        <div class="display-4">{{amount}}</div>
+        <p>{{delivery}}</p>
+        {{#each buttons}}
+        <div class="mb-2">
+            <a href="https://www.youtube.com/"
+                class="btn {{#if isSuccess}} btn-success {{else}} btn-outline-success {{/if}}">{{text}}</a>
+        </div>
+        {{/each}}
+        {{/with}}
+    </div>
+    <hr class="my-5">
+    <div class="row">
+        {{#with goodsOtherBlock}}
+        <h2 class="text-center">{{title}}</h2>
+        {{#each cards}}
+        <div class="col-4">
+            <div class="card mt-3">
+                <img class="card-img-top" src="https://picsum.photos/400/200">
+                <div class="card-body">
+                    <h5 class="card-title">{{title}}
+                        {{#if isHot}}
+                        <span class="badge text-bg-warning">Hot!</span>
+                        {{/if}}
+                        {{#if isNew}}
+                        <span class="badge text-bg-success">New!</span>
+                        {{/if}}
+                    </h5>
+                    <p>{{description}}</p>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+        {{/with}}
+    </div>
+    <hr class="my-5">
+    <div class="card text-bg-dark">
+        {{#with subscribe}}
+        <div class="card-body">
+            <h2>{{header}}</h2>
+            <p>{{description}}</p>
+            {{#each buttons}}
+            <div class="mb-2">
+                <a href="https://www.youtube.com/" class="btn btn-primary">{{text}}</a>
+            </div>
+            {{/each}}
+        </div>
+        {{/with}}
+    </div>
+    <hr class="my-5">
+    <div class="nav">
+        {{#each footer}}
+        <div class="nav-item">
+            {{#each this}}
+            <a href="https://www.youtube.com/" class="nav-link m-2 {{#if @last}} disabled {{/if}}">{{text}}</a>
+            {{/each}}
+        </div>
+        {{/each}}
+    </div>
+</main>
