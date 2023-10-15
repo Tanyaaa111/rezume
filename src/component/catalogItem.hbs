@@ -1,0 +1,60 @@
+<div class="col-8">
+    <div class="row">
+        {{#each goodsList}}
+        <div class="col-6">
+            <div class="card mt-4">
+                <img src="https://picsum.photos/400/200" class="card-img-top">
+                <div class="m-2">
+                    {{#if isHot}}
+                    <span class="badge text-bg-warning text-uppercase">Hot! </span>
+                    {{/if}}
+                    {{#if isNew}}
+                    <span class="badge text-bg-success">Нове</span>
+                    {{/if}}
+                </div>
+                <div>
+                    {{#if isFast}}
+                    <div class="m-2">
+                        <button class="btn btn-success">Швидка доставка</button>
+                    </div>
+                    {{/if}}
+                </div>
+                <div>
+                    {{#if isFree}}
+                    <div class="m-2">
+                        <button class="btn btn-secondary">Безкоштовна доставка</button>
+                    </div>
+                    {{/if}}
+                </div>
+                <div class="m-2">
+                    <h5>{{name}}</h5>
+                </div>
+                <div class="m-2">
+                    {{#with review}}
+                    <b>{{amount}}</b> : {{text}}
+                    {{/with}}
+                </div>
+                <div class="m-2">
+                    <h5>{{price}}</h5>
+                </div>
+                <p class="m-2">{{delivery}}</p>
+                <div>
+                    {{#each buttons}}
+                    <div class="m-2">
+                        <a href="#"
+                            class="btn {{#if isPrimary}} btn-primary {{else}} btn-secondary {{/if}}">{{text}}</a>
+                    </div>
+                    {{/each}}
+                </div>
+                <div>
+                    <ul>
+                        {{#each characteristics}}
+                        <li>{{title}} : {{value}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        {{/each}}
+    </div>
